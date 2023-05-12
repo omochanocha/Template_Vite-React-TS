@@ -7,5 +7,3 @@ eslint, prettier, stylelintインストール済みで、コミットすると�
 
 ## `yarn`
 リポジトリが作れたらローカルに`clone`し、`yarn`でnode_modulesをインストールする
-
-test
