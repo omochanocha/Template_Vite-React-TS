@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg';
 import './App.css';
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-const title = import.meta.env.VITE_APP_TITLE;
+const title = import.meta.env['VITE_APP_TITLE'];
 console.dir(import.meta.env);
 
 const App: FC = () => {
