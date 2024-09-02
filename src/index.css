@@ -1,4 +1,6 @@
 :root {
+  --leading-trim: calc((1em - 1lh) / 2);
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-weight: 400;
   line-height: 1.5;
@@ -73,7 +75,8 @@ button:focus-visible {
 
 /* まとめて書く場合 */
 @media (any-hover: hover) {
-  /* セレクタ */:where(:any-link, :enabled, summary):hover {
+  /* セレクタ */
+  :where(:any-link, :enabled, summary):hover {
     /* background-color: red; */
   }
 }
@@ -91,7 +94,9 @@ button:focus-visible {
   }
 
   /* 特定できない場合 */
-  /* セレクタ */:where(:any-link, :enabled, summary):hover {
+
+  /* セレクタ */
+  :where(:any-link, :enabled, summary):hover {
     /* background-color: red; */
   }
 }
