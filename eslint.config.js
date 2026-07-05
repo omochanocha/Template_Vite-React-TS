@@ -35,6 +35,8 @@ const reactConfig = {
     ...pluginJsxA11y.flatConfigs.recommended.rules,
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
+    'no-console': 'warn',
+    complexity: ['warn', { max: 10 }],
   },
 };
 
@@ -55,6 +57,15 @@ const typeConfig = {
       { prefer: 'type-imports' },
     ],
     '@typescript-eslint/strict-boolean-expressions': 'error',
+    '@typescript-eslint/no-magic-numbers': [
+      'warn',
+      {
+        ignore: [-1, 0, 1],
+        ignoreEnums: true,
+        ignoreReadonlyClassProperties: true,
+        ignoreTypeIndexes: true,
+      },
+    ],
   },
 };
 
