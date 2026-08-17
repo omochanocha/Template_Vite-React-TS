@@ -1,0 +1,45 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "printWidth": 80,
+  "singleQuote": true,
+  "ignorePatterns": [
+    "{dist,build,public,node_modules}/**",
+    "**/*.min.*",
+    "**/*-lock.{json,yaml,yml}"
+  ],
+  "sortImports": {
+    "newlinesBetween": false,
+    "internalPattern": ["@/"],
+    "customGroups": [
+      {
+        "groupName": "react",
+        "elementNamePattern": ["react", "react-dom", "react/**", "react-dom/**"]
+      },
+      {
+        "groupName": "assets",
+        "elementNamePattern": [
+          "*.json",
+          "**/*.json",
+          "*.svg",
+          "**/*.svg",
+          "*.png",
+          "**/*.png",
+          "*.jpg",
+          "**/*.jpg"
+        ]
+      }
+    ],
+    "groups": [
+      "react",
+      "builtin",
+      "external",
+      "internal",
+      ["parent", "sibling", "index"],
+      { "newlinesBetween": true },
+      "assets",
+      ["style", "side_effect_style"],
+      "side_effect",
+      "unknown"
+    ]
+  }
+}

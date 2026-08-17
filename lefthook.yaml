@@ -1,14 +1,20 @@
 pre-commit:
-  parallel: true
+  parallel: false
   commands:
-    eslint:
-      glob: '*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'
-      run: npx eslint {staged_files} --fix --quiet
-      stage_fixed: true
-    prettier:
-      glob: '*.{js,mjs,cjs,jsx,ts,tsx,html,htm,css,scss,sass,less,json,jsonc,yaml,yml,graphql,gql}'
+    1_oxfmt:
+      glob: '*.{js,mjs,cjs,jsx,ts,mts,cts,tsx,html,htm,css,scss,sass,less,json,jsonc,yaml,yml,graphql,gql,md,mdx}'
       exclude:
-        - '**/*.min.js'
-        - '**/*-lock.{json,yaml}'
-      run: npx prettier {staged_files} --write --log-level=error
+        - '{dist,build,public,node_modules}/*'
+        - '*.min.*'
+        - '*-lock.{json,yaml,yml}'
+      run: npx oxfmt {staged_files}
+      stage_fixed: true
+    2_oxlint:
+      glob: '*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'
+      exclude:
+        - '{dist,build,public,node_modules}/*'
+        - '*lib/utils.{js,ts}'
+        - '*components/ui/*'
+        - '*.config.*'
+      run: npx oxlint {staged_files} --fix --quiet
       stage_fixed: true
