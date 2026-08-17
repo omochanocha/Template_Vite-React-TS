@@ -162,6 +162,7 @@
           "warn",
           { "prefer": "type-imports" }
         ],
+        "typescript/strict-boolean-expressions": "error",
         "prefer-const": "error",
         "prefer-rest-params": "error",
         "prefer-spread": "error",
